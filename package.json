@@ -1,0 +1,22 @@
+{
+  "name": "design-patterns",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dheerajsinghnagdali/design-patterns.git"
+  },
+  "author": "Dheeraj Singh Nagdali <dheerajsinghnagdali@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dheerajsinghnagdali/design-patterns/issues"
+  },
+  "homepage": "https://github.com/dheerajsinghnagdali/design-patterns#readme",
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  }
+}
