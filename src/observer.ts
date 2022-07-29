@@ -29,3 +29,28 @@ observer.notify("Hey, how are you?");
 observer.notify("Very well");
 unsubscribe();
 observer.notify("What about you?");
+
+const createSubscribable = <TParam>() => {
+  let subscribers: ((value: TParam) => void)[] = [];
+
+  return {
+    subscribe: (cb: (value: TParam) => void) => {
+      if (!subscribers.includes(cb)) {
+        subscribers.push(cb);
+      }
+      return () => {
+        subscribers = subscribers.filter((subscriber) => subscriber !== cb);
+      };
+    },
+    notify: (value: TParam) => {
+      subscribers.forEach((subscriber) => subscriber(value));
+    },
+  };
+};
+
+const sub = createSubscribable<string>();
+const _unsubscribe = sub.subscribe(console.log);
+sub.notify("Hey, how are you?");
+sub.notify("Very well");
+_unsubscribe();
+sub.notify("What about you?");
