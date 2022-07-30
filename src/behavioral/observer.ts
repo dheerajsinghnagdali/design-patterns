@@ -1,8 +1,6 @@
 export class Subscribable<TParam> {
   private subscribers: ((value: TParam) => void)[] = [];
 
-  constructor() {}
-
   subscribe(cb: (value: TParam) => void) {
     if (!this.subscribers.includes(cb)) {
       this.subscribers.push(cb);
